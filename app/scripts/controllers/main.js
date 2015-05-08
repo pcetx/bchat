@@ -8,15 +8,15 @@
  * Controller of the bchatApp
  */
 angular.module('bchatApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $firebaseArray, Ref) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
-    //$scope.rooms = Room.all;
-    $scope.rooms = ['Room1', 'Room2', 'Room3', 'Room4', 'Room5'];
+    //$scope.rooms = Room.all();
+    $scope.rooms = $firebaseArray(Ref.child('rooms').limitToLast(10));
   });
 
 
