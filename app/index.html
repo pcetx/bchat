@@ -53,9 +53,12 @@
     </div>
 
     <div class="main-container container" ng-controller="MainCtrl">
-      <!-- The list of chat rooms -->
+      <!-- Sidebar Container -->
       <div class="side-container container">
         <div class="sidebar"> 
+      <!-- Add more rooms button -->
+          <button class="btn btn-filled addroom"> New Room </button>
+      <!-- List of all the chatrooms -->
           <ul>
             <li ng-repeat="room in rooms">
               {{room}} 
@@ -64,7 +67,7 @@
         </div>
       </div>
       <!-- The main message window -->
-      <div class="middle-container container">
+      <div class="middle-container">
         <div ng-view=""></div>
       </div>
     </div>
