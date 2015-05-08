@@ -15,6 +15,7 @@ angular.module('bchatApp')
       'Karma'
     ];
 
+    //$scope.rooms = Room.all;
     $scope.rooms = ['Room1', 'Room2', 'Room3', 'Room4', 'Room5'];
   });
 

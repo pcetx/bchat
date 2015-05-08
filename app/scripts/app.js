@@ -18,6 +18,7 @@ var app = angular.module('bchatApp', [
     'ngTouch',
     'firebase',
     'firebase.ref',
-    'firebase.auth'
-  ]);
+    'firebase.auth',
+    'angular-loading-bar'  
+]);
 

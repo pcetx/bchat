@@ -93,7 +93,18 @@ button:focus {
   height: 84.1%;
   ///background-color: blue;
   position: absolute;
-  padding: 50px;
+  padding: 30px;
+  margin: 0;
+}
+
+ul#messages {
+  height: 100%;
+  font-size: 1.1em;
+}
+
+ul, ol {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
 }
 
