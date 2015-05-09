@@ -19,7 +19,8 @@ var app = angular.module('bchatApp', [
     'firebase',
     'firebase.ref',
     'firebase.auth',
-    'angular-loading-bar'  
+    'angular-loading-bar',
+    'ui.bootstrap'  
 ]);
 
 app.factory('Room', ['$firebase', function($firebase) {

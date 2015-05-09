@@ -3,7 +3,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 // other stylesheets
-
+@import "chat.scss";
+@import "modal.scss";
+@import "login.scss";
 // endsheets
 
 .browsehappy {
@@ -60,6 +62,11 @@ button:focus {
 .addroom {
   margin: 10px 10px 20px 10px;
   color: black;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
 }
 
 .header-container {
@@ -193,3 +200,5 @@ ul, ol {
     border-bottom: 0;
   }
 }
+
+

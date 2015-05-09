@@ -17,6 +17,13 @@ angular.module('bchatApp')
 
     //$scope.rooms = Room.all();
     $scope.rooms = $firebaseArray(Ref.child('rooms').limitToLast(10));
+
+    $scope.clickModal = function (event) {
+      if (event.target === event.curentTarget) {
+        $scope.showModal = false;
+      }
+    }; 
+    
   });
 
 
