@@ -18,17 +18,19 @@ var app = angular.module('bchatApp', [
     'ngTouch',
     'firebase',
     'firebase.ref',
-    'firebase.auth',
-    'angular-loading-bar',
-    'ui.bootstrap'  
+    'firebase.auth'
 ]);
 
-app.factory('Room', ['$firebase', function($firebase) {
+app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref) {
 
-  var firebaseRef = new Firebase('https://bchat401.firebaseio.com');
-  var rooms = $firebase(firebaseRef.child('rooms')).$asArray();;
+  //var firebaseRef = new Firebase('https://bchat401.firebaseio.com');
+  var all = $firebaseArray(Ref.child('rooms').limitToLast(10));
+  var create = function(name){
 
+  };
   return {
-    all: rooms
+    all: all,
+    create: create 
+
   }
 }])
