@@ -99,36 +99,6 @@ button:focus {
   //padding: 50px 30px 50px 30px;
 }
 
-.message-container {
-  width: 70%;
-  height: 84.1%;
-  ///background-color: blue;
-  position: absolute;
-  padding: 30px;
-  margin: 0;
-  word-wrap: break-word;
-}
-
-ul#messages {
-  height: 100%;
-  font-size: 1.1em;
-}
-
-ul, ol {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.form-container {
-  width: 70%;
-  padding: 0;
-  margin: 0;
-  //background-color: red;
-  position: absolute;
-  bottom: 0;
-}
-
 .login-page {
   padding: 50px;
 }
@@ -140,13 +110,6 @@ ul, ol {
   padding: 13px;
   border: none;
 
-}
-
-.input-message {
-  height: 100%;
-  float: left;
-  width: 85%;
-  padding: 11px;
 }
 
 /* Custom page footer */

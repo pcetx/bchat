@@ -1,0 +1,70 @@
+.message-container {
+  width: 70%;
+  height: 72%;
+  position: absolute;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.room-title {
+  margin: 20px;
+}
+
+ul, ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message-container li {
+  width: 100%;
+  clear: both;
+  color: black;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.message-container li:nth-child(odd) {
+  background: #ecf0f1;
+}
+
+.message-box {
+  width: 100%;
+  padding: 20px;
+}
+
+.message-time {
+  float: right;
+  width: 10%;
+  padding: 10px;
+  padding-left: 20px;
+  font-style: italic;
+}
+
+.message-info {
+  float: left;
+  display: block;
+  width: 88%
+}
+
+.message-sender {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  width: 70%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.input-message {
+  height: 100%;
+  float: left;
+  width: 85%;
+  padding: 11px;
+}
