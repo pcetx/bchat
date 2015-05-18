@@ -7,8 +7,8 @@
  * Manages authentication to any active providers.
  */
 angular.module('bchatApp')
-  .controller('UsernameCtrl', function ($scope) {
+  .controller('UsernameCtrl', function ($scope, $modal) {
  
-   
+
 
   });

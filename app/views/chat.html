@@ -1,11 +1,11 @@
-<h2 class="room-title"> {{'Room'}} </h1>
+<h2 class="room-title"> {{'roomname.text'}} </h1>
 
 <div class="message-container">
   <ul id="messages" ng-show="messages.length">
     <li class="message" ng-repeat="message in messages | reverse">
       <div class="message-box">
         <div class="message-info">
-          <div class = "message-sender"> {{'Sender Name'}} </div>
+          <div class = "message-sender"> {{'sendername'}} </div>
           <div ng-style="{clear:left}">{{message.text}} </div>
         </div>
         <div class="message-time"> 4:05pm </div>

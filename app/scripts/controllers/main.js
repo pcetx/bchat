@@ -17,6 +17,8 @@ angular.module('bchatApp')
 
     $scope.rooms = Rooms.all;
     $scope.animationsEnabled = true;
+    $scope.activeRoom = null;
+    var roomname = $scope.roomname;
 
     $scope.open = function () {
       var modalInstance = $modal.open({
@@ -26,23 +28,30 @@ angular.module('bchatApp')
       });
     };
 
+    $scope.displayNewRoom = function(room) {
+      
+    }
+
   });
 
   angular.module('bchatApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, Rooms) {
 
-  //var newRoom = $scope.newRoom
-
-  $scope.ok = function () {
+  $scope.ok = function() {
     $modalInstance.dismiss('cancel');
-    $scope.rooms = Rooms.create('another room');
-     if(Rooms){
-
-     }
+    $scope.rooms = Rooms.create($scope.newRoom);
   };
 
-  $scope.cancel = function () {
+  $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
+
+  $scope.setUsername = function() {
+    if ($scope.userName !== null) {
+      $modelInstance.dismiss();
+      $cookies.put($scope.userName);
+    };
+  };
+
 });
 
 

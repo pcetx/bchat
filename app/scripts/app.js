@@ -23,24 +23,26 @@ var app = angular.module('bchatApp', [
     'angular-loading-bar'
 ])
 
- .run(['$cookies', '$modal', function($cookies, $modal) {
+ app.run(['$cookies', '$modal', function($cookies, $modal) {
 
       if (!$cookies.blocChatCurrentUser || $cookies.blocChatCurrentUser === '' ) {
 
-        $modal.open({
-          templateUrl: '../templates/usermodal.html',
-          controller: 'UsernameCtrl',
-        })
+        // Do something to let users set their usernames
+        var modalInstance = $modal.open({
+          templateUrl: 'templates/usermodal.html',
+          controller: 'ModalInstanceCtrl',
+        });
+        console.log("running");
 
       }
 
  }]);
 
-
 app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref) {
 
   //var firebaseRef = new Firebase('https://bchat401.firebaseio.com');
   var all = $firebaseArray(Ref.child('rooms'));
+  var allMessages = $firebaseArray(Ref.orderByChild('roomID'));
 
   //Add a new chatroom to the List according to input name
   var create = function(newRoom){
@@ -53,12 +55,15 @@ app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref) {
   };
 
   var messages = function(roomId) {
-      // Message query logic
+    if (allMessages.$equalTo(this.$roomId)) {
+      return allMessages;
+    };
   };
 
   return {
     all: all,
     create: create, 
-    remove: remove
+    remove: remove,
+    messages: messages
   }
 }])

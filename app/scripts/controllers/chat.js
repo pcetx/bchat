@@ -9,6 +9,7 @@
 angular.module('bchatApp')
   .controller('ChatCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
     // synchronize a read-only, synchronized array of messages, limit to most recent 10
+    /*
     $scope.messages = $firebaseArray(Ref.child('messages').limitToLast(10));
 
     // display any errors
@@ -30,4 +31,5 @@ angular.module('bchatApp')
         $scope.err = null;
       }, 5000);
     }
+    */
   });
