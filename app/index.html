@@ -63,7 +63,7 @@
           <button class="btn btn-filled addroom" ng-click="open()"> New Room </button>
       <!-- List of all the chatrooms -->
           <ul>
-            <a ng-repeat="room in rooms" ng-click="roomname = room.$value">
+            <a ng-repeat="room in rooms" ng-click="setActiveRoom(room)">
               {{room.$value}} 
             </a>
           </ul>

@@ -7,29 +7,14 @@
  * A demo of using AngularFire to manage a synchronized list.
  */
 angular.module('bchatApp')
-  .controller('ChatCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
-    // synchronize a read-only, synchronized array of messages, limit to most recent 10
-    /*
-    $scope.messages = $firebaseArray(Ref.child('messages').limitToLast(10));
+  .controller('ChatCtrl', function ($scope, Ref, $firebaseArray, $timeout, Rooms) {
 
-    // display any errors
-    $scope.messages.$loaded().catch(alert);
+    var messages = $firebaseArray(Ref.child('messages'));
+    //$scope.activeRoom = 'active';
+    $scope.messages = Rooms.messages('JpFLawehwKTMoc5KPf5');
+    //$scope.messageContent = Rooms.messages.on("value", content);
+    //$scope.messageTime = Rooms.messages('JpFLawehwKTMoc5KPf5').sentAt;
+    //$scope.messageSender = Rooms.messages('JpFLawehwKTMoc5KPf5').content;
+    
 
-    // provide a method for adding a message
-    $scope.addMessage = function(newMessage) {
-      if( newMessage ) {
-        // push a message to the end of the array
-        $scope.messages.$add({text: newMessage})
-          // display any errors
-          .catch(alert);
-      }
-    };
-
-    function alert(msg) {
-      $scope.err = msg;
-      $timeout(function() {
-        $scope.err = null;
-      }, 5000);
-    }
-    */
   });

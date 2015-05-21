@@ -38,11 +38,14 @@ var app = angular.module('bchatApp', [
 
  }]);
 
-app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref) {
+app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref, $scope) {
 
   //var firebaseRef = new Firebase('https://bchat401.firebaseio.com');
   var all = $firebaseArray(Ref.child('rooms'));
-  var allMessages = $firebaseArray(Ref.orderByChild('roomID'));
+  var messages = $firebaseArray(Ref.child('messages'));
+
+  //$scope.activeRoom = 'new room';
+  //var allMessages = $firebaseArray(Ref.child('messages').orderByChild('roomId').equalTo('JpFLawehwKTMoc5KPf5'));
 
   //Add a new chatroom to the List according to input name
   var create = function(newRoom){
@@ -54,16 +57,21 @@ app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref) {
     all.$remove(name);
   };
 
+  //Return all messages for a particular room
   var messages = function(roomId) {
-    if (allMessages.$equalTo(this.$roomId)) {
-      return allMessages;
-    };
+    var allMessages = $firebaseArray(Ref.child('messages').orderByChild('roomId').equalTo(roomId));
+    return allMessages;
+  };
+
+  var createMessage = function() {
+
   };
 
   return {
     all: all,
     create: create, 
     remove: remove,
-    messages: messages
+    messages: messages,
+    createMessage: createMessage
   }
 }])

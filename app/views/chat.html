@@ -1,14 +1,14 @@
-<h2 class="room-title"> {{'roomname.text'}} </h1>
+<h2 class="room-title"> {{activeRoom}} </h1>
 
 <div class="message-container">
   <ul id="messages" ng-show="messages.length">
     <li class="message" ng-repeat="message in messages | reverse">
       <div class="message-box">
         <div class="message-info">
-          <div class = "message-sender"> {{'sendername'}} </div>
-          <div ng-style="{clear:left}">{{message.text}} </div>
+          <div class = "message-sender"> {{message.username}} </div>
+          <div class = "message-content" ng-style="{clear:left}"> {{message.content}} </div>
         </div>
-        <div class="message-time"> 4:05pm </div>
+        <div class="message-time"> {{message.sentAt}}</div>
       </div>
     </li>
   </ul>

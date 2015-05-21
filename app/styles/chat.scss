@@ -37,8 +37,9 @@ ul, ol {
 
 .message-time {
   float: right;
-  width: 10%;
+  width: 15%;
   padding: 10px;
+  padding-right: 0px;
   padding-left: 20px;
   font-style: italic;
 }
@@ -46,7 +47,7 @@ ul, ol {
 .message-info {
   float: left;
   display: block;
-  width: 88%
+  width: 80%
 }
 
 .message-sender {
