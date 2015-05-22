@@ -8,7 +8,6 @@
  */
 angular.module('bchatApp')
   .controller('UsernameCtrl', function ($scope, $modal) {
- 
-
+      
 
   });

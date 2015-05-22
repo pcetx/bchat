@@ -63,15 +63,25 @@ app.factory('Rooms', ['$firebaseArray','Ref', function($firebaseArray, Ref, $sco
     return allMessages;
   };
 
+  return {
+    all: all,
+    create: create, 
+    remove: remove,
+    messages: messages
+  }
+}])
+
+app.factory('Message', ['$firebase', function($firebaseArray, Ref, $scope) {
+
+  //var messages = $firebaseArray(Ref.child('messages'));
+
   var createMessage = function() {
 
   };
 
   return {
-    all: all,
-    create: create, 
-    remove: remove,
-    messages: messages,
-    createMessage: createMessage
+    send: function(newMessage) {
+      // Send method logic
+    }
   }
 }])

@@ -22,13 +22,13 @@ angular.module('bchatApp')
 
     $scope.setActiveRoom = function(room) {
       // Change the title of the room
-      $scope.activeRoom = 'Room name';
+      //$scope.activeRoom = 'Room name';
+      $scope.activeRoom = room.$value;
       //Display only the messages for that particular room
       var messages = $firebaseArray(Ref.child('messages'));
-      $scope.messages = Rooms.messages('room');
-      console.log('new room');
+      $scope.messages = Rooms.messages(room.$id);
+      console.log(room.$id);
     }
-
 
     $scope.open = function () {
       var modalInstance = $modal.open({
@@ -38,11 +38,9 @@ angular.module('bchatApp')
       });
     };
 
-
-
   });
 
-  angular.module('bchatApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, Rooms) {
+  angular.module('bchatApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, Rooms, $cookies, $cookieStore) {
 
   $scope.ok = function() {
     $modalInstance.dismiss('cancel');
@@ -53,11 +51,13 @@ angular.module('bchatApp')
     $modalInstance.dismiss('cancel');
   };
 
-  $scope.setUsername = function() {
-    if ($scope.userName !== null) {
-      $modelInstance.dismiss();
-      $cookies.put($scope.userName);
+  $scope.setUsername = function(username) {
+    if ($scope.userName !== '') {
+      $cookieStore.put('username',$scope.userName);
+      $modalInstance.dismiss('cancel');
+      console.log($scope.userName);
     };
+    
   };
 
 });
