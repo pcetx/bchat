@@ -31,6 +31,7 @@ var app = angular.module('bchatApp', [
         var modalInstance = $modal.open({
           templateUrl: 'templates/usermodal.html',
           controller: 'ModalInstanceCtrl',
+          backdrop: 'static'
         });
         console.log("running");
 

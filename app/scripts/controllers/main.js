@@ -55,7 +55,7 @@ angular.module('bchatApp')
     if ($scope.userName !== '') {
       $cookieStore.put('username',$scope.userName);
       $modalInstance.dismiss('cancel');
-      console.log($scope.userName);
+      console.log($cookieStore.get('username'));
     };
     
   };
